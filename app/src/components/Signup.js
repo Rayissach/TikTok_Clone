@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 export const Signup = () => {
     return (
@@ -6,6 +6,11 @@ export const Signup = () => {
             <form >
                 <label for='firstName'>
                     First Name:
+                    <input
+                        value={}
+                        onChange={}
+                        onSubmit={}
+                    />
                 </label>
                 <label for='lastName'>
                     Last Name:
