@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Profile = () => {
+export const Nav = () => {
     return (
         <div>
-            <Nav />
+            
         </div>
     )
 }
