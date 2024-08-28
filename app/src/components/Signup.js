@@ -8,17 +8,26 @@ export const Signup = () => {
         'username' : '',
         'password' : ''
     }
+
+    const handleChange = (e) => {
+        const { name : value } = e.target
+        setData({...data})
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(data)
+    }
     
     return (
         <div>
-            <form >
+            <form onSubmit={handleSubmit}>
                 <label for='firstName'>
                     First Name:
                     <input
                         name='firstName'
                         value={data.firstName}
-                        onChange={}
-                        onSubmit={}
+                        onChange={handleChange}
                     />
                 </label>
                 <label for='lastName'>
@@ -26,8 +35,7 @@ export const Signup = () => {
                     <input 
                         name='lastName'
                         value={data.lastName}
-                        onChange={}
-                        onSubmit={}
+                        onChange={handleChange}
                     />
                 </label>
                 <label for='email'>
@@ -35,8 +43,7 @@ export const Signup = () => {
                     <input 
                         name='email'
                         value={data.email}
-                        onChange={}
-                        onSubmit={}
+                        onChange={handleChange}
                     />
                 </label>
                 <label for='username'>
@@ -44,8 +51,7 @@ export const Signup = () => {
                     <input 
                         name='username'
                         value={data.username}
-                        onChange={}
-                        onSubmit={}
+                        onChange={handleChange}
                     />
                 </label>
                 <label for='password'>
@@ -53,10 +59,10 @@ export const Signup = () => {
                     <input 
                         name='password'
                         value={data.password}
-                        onChange={}
-                        onSubmit={}
+                        onChange={handleChange}
                     />
                 </label>
+                <button type='submit'>Submit</button>
             </form>
         </div>
     )
