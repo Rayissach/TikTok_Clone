@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
 
 export const Signup = () => {
-    const [data, setData] = {
+    const [data, setData] = useState({
         'email': '',
         'firstName' : '',
         'lastName' : '',
         'username' : '',
         'password' : ''
-    }
+    })
 
     const handleChange = (e) => {
-        const { name : value } = e.target
-        setData({...data})
+        const { name, value } = e.target
+        setData({...data, [name] : value})
     }
 
     const handleSubmit = (e) => {
