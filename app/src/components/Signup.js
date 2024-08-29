@@ -20,7 +20,7 @@ export const Signup = () => {
     }
     
     return (
-        <div>
+        <div className='userCred'>
             <form onSubmit={handleSubmit}>
                 <label for='firstName'>
                     First Name:
