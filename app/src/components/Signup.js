@@ -18,12 +18,37 @@ export const Signup = () => {
         e.preventDefault()
         console.log(data)
     }
+
+    const monthDropdown = ({ options }) => {
+        return (
+            <select>
+                {options.map(option => (
+                    <option>
+
+                    </option>
+                ))}
+            </select>
+        )
+    }
+
+    const optionsData = [
+        {value: 'month', label: 'January'},
+        {value: 'month', label: 'February'},
+        {value: 'day', label: '1'},
+        {value: 'day', label: '2'},
+    ]
     
     return (
         <div className='h-80 border m-5 bg-slate-700 
         flex justify-center items-center w-9/12
          grid-rows-6 grid-flow-col gap-4'>
             <form className='' onSubmit={handleSubmit}>
+                <label >
+                    When's your birthday?
+                    <select>
+                        <option>January</option>
+                    </select>
+                </label>
                 <label for='firstName'>
                     First Name:
                     <input
