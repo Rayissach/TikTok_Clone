@@ -31,10 +31,32 @@ export const Signup = () => {
         )
     }
 
+    const DayDropdown = ({ options }) => {
+        return (
+            <select>
+                {
+                [...Array(31)].map((_, i) => i + 1).map(i => 
+                    <option key={i} value={i}>{i}</option>
+                )
+                }
+            </select>
+        )
+    }
+
     const optionsData = [
         {value: 'month', label: 'January'},
         {value: 'month', label: 'February'},
-        {value: 'day', label: '1'},
+        {value: 'month', label: 'March'},
+        {value: 'month', label: 'April'},
+        {value: 'month', label: 'May'},
+        {value: 'month', label: 'June'},
+        {value: 'month', label: 'July'},
+        {value: 'month', label: 'August'},
+        {value: 'month', label: 'September'},
+        {value: 'month', label: 'October'},
+        {value: 'month', label: 'November'},
+        {value: 'month', label: 'December'},
+        {value: 'day', label: [1, 2, 3, 4,]},
         {value: 'day', label: '2'},
     ]
     
@@ -46,6 +68,7 @@ export const Signup = () => {
                 <label >
                     When's your birthday?
                     <MonthDropdown options={optionsData} />
+                    <DayDropdown options={optionsData} />
                 </label>
                 <label for='firstName'>
                     First Name:
