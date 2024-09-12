@@ -31,19 +31,26 @@ export const Signup = () => {
         )
     }
 
-    const DayDropdown = ({ options }) => {
+   
+
+    const DayDropdown = ({ selectedMonth }) => {
+        const thirtys = ['April', 'June', 'September', 'November']
+        const february = 'February'
+        const days = 
+        thirtys.includes(selectedMonth) ? 30 : selectedMonth === february ? 28 : 31;
+
         return (
             <select>
-                {
-                [...Array(31)].map((_, i) => i + 1).map(i => 
-                    <option key={i} value={i}>{i}</option>
-                )
-                }
+                {[...Array(days).keys()].map(i => (
+                        <option key={i + 1} value={i + 1}>
+                            {i + 1}
+                        </option>
+                    ))}
             </select>
         )
     }
 
-    const optionsData = [
+    const monthOptions = [
         {value: 'month', label: 'January'},
         {value: 'month', label: 'February'},
         {value: 'month', label: 'March'},
@@ -56,9 +63,13 @@ export const Signup = () => {
         {value: 'month', label: 'October'},
         {value: 'month', label: 'November'},
         {value: 'month', label: 'December'},
-        {value: 'day', label: [1, 2, 3, 4,]},
-        {value: 'day', label: '2'},
     ]
+
+    const [selectedMonth, setSelectedMonth] = useState(monthOptions[0].label)
+
+    const handleSelectedMonth = (e) => {
+        setSelectedMonth(e.target.value)
+    }
     
     return (
         <div className='h-80 border m-5 bg-slate-700 
@@ -67,8 +78,8 @@ export const Signup = () => {
             <form className='' onSubmit={handleSubmit}>
                 <label >
                     When's your birthday?
-                    <MonthDropdown options={optionsData} />
-                    <DayDropdown options={optionsData} />
+                    <MonthDropdown options={monthOptions} />
+                    <DayDropdown selectedMonths={selectedMonth} />
                 </label>
                 <label for='firstName'>
                     First Name:
