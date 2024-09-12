@@ -19,12 +19,12 @@ export const Signup = () => {
         console.log(data)
     }
 
-    const monthDropdown = ({ options }) => {
+    const MonthDropdown = ({ options }) => {
         return (
             <select>
-                {options.map(option => (
-                    <option>
-
+                {options.filter(option => option.value === 'month' ).map(option => (
+                    <option key={option.value} value={option.value}>
+                        {option.label}
                     </option>
                 ))}
             </select>
@@ -45,9 +45,7 @@ export const Signup = () => {
             <form className='' onSubmit={handleSubmit}>
                 <label >
                     When's your birthday?
-                    <select>
-                        <option>January</option>
-                    </select>
+                    <MonthDropdown options={optionsData} />
                 </label>
                 <label for='firstName'>
                     First Name:
