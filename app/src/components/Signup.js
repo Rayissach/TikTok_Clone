@@ -19,12 +19,44 @@ export const Signup = () => {
         console.log(data)
     }
 
-    const MonthDropdown = ({ options }) => {
+    const MonthDropdown = ({ options, selectedMonth, onChange }) => {
         return (
-            <select>
-                {options.filter(option => option.value === 'month' ).map(option => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
+            <select name='month' value={selectedMonth} onChange={onChange}>
+                {
+                    options.map(option => (
+                        <option key={option.label} value={option.label}>
+                            {option.label}
+                        </option>
+                    ))
+                }
+            </select>
+        )
+    }
+
+    const YearsDropdown = () => {
+        const [selectedYear, setSelectedYear] = useState(new Date().getFullYear())
+
+        const handleYearChange = (e) => {
+            setSelectedYear(e.target.value)
+        }
+
+        const generateYears = () => {
+            const currentYear = new Date().getFullYear()
+            const startYear = currentYear - 120
+            const endYear = currentYear
+
+            const years = []
+            for(let year = startYear; year <= endYear; year++){
+                years.push(year);
+            }
+            return years;
+        }
+
+        return (
+            <select value={selectedYear} onChange={handleYearChange}>
+                {generateYears().map((year) => (
+                    <option key={year} value={year}>
+                        {year}
                     </option>
                 ))}
             </select>
@@ -34,21 +66,21 @@ export const Signup = () => {
    
 
     const DayDropdown = ({ selectedMonth }) => {
-        const thirtys = ['April', 'June', 'September', 'November']
-        const february = 'February'
-        const days = 
-        thirtys.includes(selectedMonth) ? 30 : selectedMonth === february ? 28 : 31;
+        const thirtys = ['April', 'June', 'September', 'November'];
+        const february = 'February';
+        const days =
+            thirtys.includes(selectedMonth) ? 30 : selectedMonth === february ? 28 : 31;
 
         return (
-            <select>
-                {[...Array(days).keys()].map(i => (
-                        <option key={i + 1} value={i + 1}>
-                            {i + 1}
-                        </option>
-                    ))}
+            <select name="day">
+                {[...Array(days).keys()].map((_,i) => (
+                    <option key={i + 1} value={i + 1}>
+                        {i + 1}
+                    </option>
+                ))}
             </select>
-        )
-    }
+        );
+    };
 
     const monthOptions = [
         {value: 'month', label: 'January'},
@@ -78,8 +110,15 @@ export const Signup = () => {
             <form className='' onSubmit={handleSubmit}>
                 <label >
                     When's your birthday?
-                    <MonthDropdown options={monthOptions} />
-                    <DayDropdown selectedMonths={selectedMonth} />
+                    <MonthDropdown 
+                        options={monthOptions} 
+                        selectedMonth={selectedMonth}
+                        onChange={handleSelectedMonth}
+                    />
+                    <br />
+                    <DayDropdown selectedMonth={selectedMonth} />
+                    <br />
+                    <YearsDropdown />
                 </label>
                 <label for='firstName'>
                     First Name:
