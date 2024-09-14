@@ -104,22 +104,22 @@ export const Signup = () => {
     }
     
     return (
-        <div className='mt-16'>
-        <div className='h-80 border-2 m-5 bg-slate-700 
-        flex justify-center items-center w-9/12
-         grid-rows-6 grid-flow-col gap-4'>
+        <div className='mt-16 overflow-scroll w-screen'>
+        <div className='bg-slate-700 
+         mt-16 mx-64 box-border w-96 object-contain h-96'>
             <form className='' onSubmit={handleSubmit}>
-                <label >
+                <h2 className='bg-red-600 w-full h-12 mt-4 mb-4 text-3xl flex justify-center items-center'>Sign up</h2>
+                <label for='bday'>
                     When's your birthday?
-                    <MonthDropdown 
-                        options={monthOptions} 
-                        selectedMonth={selectedMonth}
-                        onChange={handleSelectedMonth}
-                    />
-                    <br />
-                    <DayDropdown selectedMonth={selectedMonth} />
-                    <br />
-                    <YearsDropdown />
+                    <div name='bday'>
+                        <MonthDropdown 
+                            options={monthOptions} 
+                            selectedMonth={selectedMonth}
+                            onChange={handleSelectedMonth}
+                        />
+                        <DayDropdown selectedMonth={selectedMonth} />
+                        <YearsDropdown />
+                    </div>
                 </label>
                 <label for='firstName'>
                     First Name:
