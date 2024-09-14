@@ -104,7 +104,8 @@ export const Signup = () => {
     }
     
     return (
-        <div className='h-80 border m-5 bg-slate-700 
+        <div>
+        <div className='h-80 border-2 m-5 bg-slate-700 
         flex justify-center items-center w-9/12
          grid-rows-6 grid-flow-col gap-4'>
             <form className='' onSubmit={handleSubmit}>
@@ -163,6 +164,7 @@ export const Signup = () => {
                 </label>
                 <button type='submit'>Submit</button>
             </form>
+        </div>
         </div>
     )
 }

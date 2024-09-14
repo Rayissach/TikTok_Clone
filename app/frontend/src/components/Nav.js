@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Nav = () => {
+export const Nav = ({ logoSVG: Logo }) => {
     return (
-        <div>
-            
-        </div>
+        <nav>
+            <Logo />
+        </nav>
     )
 }
