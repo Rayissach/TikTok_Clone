@@ -22,6 +22,7 @@ export const Signup = () => {
     const MonthDropdown = ({ options, selectedMonth, onChange }) => {
         return (
             <select name='month' value={selectedMonth} onChange={onChange}>
+                {/* <option value="" disabled>Month</option> */}
                 {
                     options.map(option => (
                         <option key={option.label} value={option.label}>
@@ -54,6 +55,7 @@ export const Signup = () => {
 
         return (
             <select value={selectedYear} onChange={handleYearChange}>
+                <option value="1" disabled>Year</option>
                 {generateYears().map((year) => (
                     <option key={year} value={year}>
                         {year}
@@ -83,6 +85,7 @@ export const Signup = () => {
     };
 
     const monthOptions = [
+        {value: '', label: 'Month', disabled: true},
         {value: 'month', label: 'January'},
         {value: 'month', label: 'February'},
         {value: 'month', label: 'March'},
@@ -108,11 +111,11 @@ export const Signup = () => {
         <div className='bg-slate-700 
          mt-16 mx-64 box-border w-96 object-contain h-96'>
             <form className='' onSubmit={handleSubmit}>
-                <h2 className='bg-red-600 w-full h-12 mt-4 mb-4 text-3xl flex justify-center items-center'>Sign up</h2>
-                <label for='bday'>
+                <h2 className=' w-full h-12 mt-4 mb-4 text-3xl flex justify-center items-center'>Sign up</h2>
+                <label for='bday' className='w-full bg-yellow-500 mb-4 text-base'> 
                     When's your birthday?
-                    <div name='bday'>
-                        <MonthDropdown 
+                    <div name='bday' className='w-full h-11 flex justify-center'>
+                        <MonthDropdown
                             options={monthOptions} 
                             selectedMonth={selectedMonth}
                             onChange={handleSelectedMonth}
@@ -124,6 +127,7 @@ export const Signup = () => {
                 <label for='firstName'>
                     First Name:
                     <input
+                        autocomplete="off" 
                         className='col-span-5'
                         name='firstName'
                         value={data.firstName}
