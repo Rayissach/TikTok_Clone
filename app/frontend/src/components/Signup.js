@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import arrowIcon from '../images/sort-down-solid.svg'
 
 export const Signup = () => {
     const [data, setData] = useState({
@@ -21,7 +22,12 @@ export const Signup = () => {
 
     const MonthDropdown = ({ options, selectedMonth, onChange }) => {
         return (
-            <select name='month' value={selectedMonth} onChange={onChange}>
+            <select className='text-xl appearance-none display-none bg-no-repeat pr-10' style={{
+                backgroundImage:`url(${arrowIcon})`,
+                backgroundPositionX: 'calc(100% - 10px)',
+                backgroundPositionY: 'center',
+                backgroundSize: '12px 12px',
+            }} name='month' value={selectedMonth} onChange={onChange}>
                 {/* <option value="" disabled>Month</option> */}
                 {
                     options.map(option => (
@@ -115,11 +121,11 @@ export const Signup = () => {
                 <label for='bday' className='w-full bg-yellow-500 mb-4 text-base'> 
                     When's your birthday?
                     <div name='bday' className='w-full h-11 flex justify-center'>
-                        <MonthDropdown
-                            options={monthOptions} 
-                            selectedMonth={selectedMonth}
-                            onChange={handleSelectedMonth}
-                        />
+                            <MonthDropdown
+                                options={monthOptions} 
+                                selectedMonth={selectedMonth}
+                                onChange={handleSelectedMonth}
+                            />
                         <DayDropdown selectedMonth={selectedMonth} />
                         <YearsDropdown />
                     </div>
