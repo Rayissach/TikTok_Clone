@@ -22,11 +22,12 @@ export const Signup = () => {
 
     const MonthDropdown = ({ options, selectedMonth, onChange }) => {
         return (
-            <select className='text-xl appearance-none display-none bg-no-repeat pr-10' style={{
+            <select className='w-4/12 text-xl appearance-none display-none bg-no-repeat pr-10' style={{
                 backgroundImage:`url(${arrowIcon})`,
                 backgroundPositionX: 'calc(100% - 10px)',
                 backgroundPositionY: 'center',
                 backgroundSize: '12px 12px',
+                transition: 'transform 0.3s ease',
             }} name='month' value={selectedMonth} onChange={onChange}>
                 {/* <option value="" disabled>Month</option> */}
                 {
@@ -60,7 +61,13 @@ export const Signup = () => {
         }
 
         return (
-            <select value={selectedYear} onChange={handleYearChange}>
+            <select className='w-4/12 text-xl appearance-none display-none bg-no-repeat pr-10' style={{
+                backgroundImage:`url(${arrowIcon})`,
+                backgroundPositionX: 'calc(100% - 10px)',
+                backgroundPositionY: 'center',
+                backgroundSize: '12px 12px',
+                transition: 'transform 0.3s ease',
+            }} value={selectedYear} onChange={handleYearChange}>
                 <option value="1" disabled>Year</option>
                 {generateYears().map((year) => (
                     <option key={year} value={year}>
@@ -80,7 +87,13 @@ export const Signup = () => {
             thirtys.includes(selectedMonth) ? 30 : selectedMonth === february ? 28 : 31;
 
         return (
-            <select name="day">
+            <select className='w-4/12 text-xl appearance-none display-none bg-no-repeat pr-10' style={{
+                backgroundImage:`url(${arrowIcon})`,
+                backgroundPositionX: 'calc(100% - 10px)',
+                backgroundPositionY: 'center',
+                backgroundSize: '12px 12px',
+                transition: 'transform 0.3s ease',
+            }} name="day">
                 {[...Array(days).keys()].map((_,i) => (
                     <option key={i + 1} value={i + 1}>
                         {i + 1}
