@@ -143,48 +143,41 @@ export const Signup = () => {
                         <YearsDropdown />
                     </div>
                 </label>
-                <label for='firstName'>
-                    First Name:
-                    <input
-                        autocomplete="off" 
-                        className='col-span-5'
-                        name='firstName'
-                        value={data.firstName}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label for='lastName'>
-                    Last Name:
-                    <input 
-                        name='lastName'
-                        value={data.lastName}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label for='email'>
-                    Email:
-                    <input 
-                        name='email'
-                        value={data.email}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label for='username'>
-                    Username:
-                    <input 
-                        name='username'
-                        value={data.username}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label for='password'>
-                    Password:
-                    <input 
-                        name='password'
-                        value={data.password}
-                        onChange={handleChange}
-                    />
-                </label>
+                <label>Email</label>
+                <br />
+                <input
+                    autocomplete="off" 
+                    className='col-span-5'
+                    name='firstName'
+                    value={data.firstName}
+                    onChange={handleChange}
+                    placeholder='First Name'
+                />
+                <input 
+                    name='lastName'
+                    value={data.lastName}
+                    onChange={handleChange}
+                    placeholder='Last Name'
+                />
+                <input 
+                    name='email'
+                    value={data.email}
+                    onChange={handleChange}
+                    placeholder='Email'
+                />
+                <input 
+                    name='username'
+                    value={data.username}
+                    onChange={handleChange}
+                    placeholder='Username'
+                />
+                <input 
+                    name='password'
+                    value={data.password}
+                    onChange={handleChange}
+                    placeholder='Password'
+                />
+                <br />
                 <button type='submit'>Submit</button>
             </form>
         </div>
