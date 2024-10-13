@@ -126,59 +126,62 @@ export const Signup = () => {
     }
     
     return (
-        <div className='mt-16 overflow-scroll w-screen'>
-        <div className='bg-slate-700 
-         mt-16 mx-64 box-border w-96 object-contain h-96'>
-            <form className='' onSubmit={handleSubmit}>
-                <h2 className=' w-full h-12 mt-4 mb-4 text-3xl flex justify-center items-center'>Sign up</h2>
-                <label for='bday' className='w-full bg-yellow-500 mb-4 text-base'> 
+        <div className='mt-16 overflow-scroll w-screen justify-center'>
+        <div className='mt-16 box-border w-96 object-contain h-96 m-auto'>
+            <form onSubmit={handleSubmit}>
+                <h2 className='H2Titles'>Sign up</h2>
+                <label for='bday' className='divTitle'> 
                     When's your birthday?
                     <div name='bday' className='w-full h-11 flex justify-center'>
                             <MonthDropdown
                                 options={monthOptions} 
                                 selectedMonth={selectedMonth}
                                 onChange={handleSelectedMonth}
+                                className='divSelectLabel'
                             />
-                        <DayDropdown selectedMonth={selectedMonth} />
-                        <YearsDropdown />
+                        <DayDropdown className='divSelectLabel' selectedMonth={selectedMonth} />
+                        <YearsDropdown className='divSelectLabel' />
                     </div>
                 </label>
-                <label>Email</label>
                 <br />
                 <input
                     autocomplete="off" 
-                    className='col-span-5'
+                    className='inputSelector'
                     name='firstName'
                     value={data.firstName}
                     onChange={handleChange}
-                    placeholder='First Name'
+                    placeholder=' First Name'
                 />
                 <input 
                     name='lastName'
                     value={data.lastName}
                     onChange={handleChange}
-                    placeholder='Last Name'
+                    placeholder=' Last Name'
+                    className='inputSelector'
                 />
                 <input 
                     name='email'
                     value={data.email}
                     onChange={handleChange}
-                    placeholder='Email'
+                    placeholder=' Email'
+                    className='inputSelector'
                 />
                 <input 
                     name='username'
                     value={data.username}
                     onChange={handleChange}
-                    placeholder='Username'
+                    placeholder=' Username'
+                    className='inputSelector'
                 />
                 <input 
                     name='password'
                     value={data.password}
                     onChange={handleChange}
-                    placeholder='Password'
+                    placeholder=' Password'
+                    className='inputSelector'
                 />
                 <br />
-                <button type='submit'>Submit</button>
+                <button className='inputSelector' type='submit'>Submit</button>
             </form>
         </div>
         </div>

@@ -1,6 +1,51 @@
-import 
-
+s
 .background-image-arrow {
     background-size: 10%;
     background-position: left;
+}
+
+.inputSelector {
+    border-radius: 2px;
+    background-color: rgba(22, 24, 35, 0.06);
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    padding-inline-start: 12px;
+    color: rgb(22, 24, 35);
+    line-height: 100%;
+    outline: none;
+    font-size: 16px;
+    height: 44px;
+    caret-color: rgb(254, 44, 85);
+    width: 100%;
+    padding-inline-end: unset;
+    margin-bottom: 10px;
+}
+
+.H2Titles {
+    color: rgb(22, 24, 35);
+    /* font-family: TikTokDisplayFont; */
+    font-size: 32px;
+    margin: 16px auto;
+    font-weight: bold;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.divSelectLabel {
+    width: 115px;
+    height: 44px;
+    padding: 0px 12px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgba(22, 24, 35, 0.34);
+    font-size: 16px;
+}
+.divTitle {
+    color: rgb(22, 24, 35);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 4px;
 }
